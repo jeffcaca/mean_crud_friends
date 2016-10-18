@@ -1,0 +1,21 @@
+
+<br>
+<p>Sort by : <input type="text" name="filter" ng-model="filter_text" placeholder="Enter filter"></p>
+<table class="table table-hover table-bordered">
+		<thead>
+			<tr>
+				<th>First Name</th>
+				<th>Action</th>
+				<th>Action</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="friend in friends | filter:filter_text | orderBy:sortType">
+				<td>{{friend.first_name}} {{friend.last_name}}</td>
+				<td><a href="#/friends/edit/{{friend._id}}"><button class="btn btn-sm btn-info">Edit Friend</button></a></td>
+				<td><a href="#/friends/{{friend._id}}/delete"><button class="btn btn-sm btn-danger">Delete</button></a></td>
+				<td><a href="#/friends/{{friend._id}}"><button class="btn btn-sm btn-success">Show</button></a></td>
+			</tr>
+		</tbody>
+	</table>

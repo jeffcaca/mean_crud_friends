@@ -1,0 +1,28 @@
+
+<br>
+	<form>
+	First Name: <input type="text" ng-model="newFriend.first_name" class='form-control'><br>
+	Last Name:<input type="text" ng-model="newFriend.last_name" class='form-control'><br>
+	Birthday :<input type="date" ng-model="newFriend.birthday" class='form-control'><br>
+	<input type="submit" value="Add friend" ng-click="create()" class="btn btn-sm btn-primary">
+	</form>
+<br>
+	<table class="table table-hover table-bordered">
+		<thead>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Birthday</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="friend in friends track by $index">
+				<td>{{friend.first_name}}</td>
+				<td>{{friend.last_name}}</td>
+				<td>{{friend.birthday}}</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+{{errors}}
