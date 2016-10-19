@@ -13,9 +13,9 @@ app.factory('friendsFactory', ['$http', function($http) {
         }
       });
     };
-    this.update = function(editfriend, callback){ // what parameters do we need?
+    this.update = function(id, editfriend, callback){ // what parameters do we need?
     
-      $http.put('/friends/' + friend._id, editfriend).then(function(returned_data){
+      $http.put('/friends/' + id,  editfriend).then(function(returned_data){
         if (typeof(callback) == 'function'){
           callback(returned_data.data)
         }

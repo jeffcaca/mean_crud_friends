@@ -19,9 +19,8 @@ app.controller('editController', ['$scope','friendsFactory', '$routeParams', '$l
 
 
 	$scope.update = function(){
-
-   						friendsFactory.update(
-						$scope.editFriend, function(returnedData){
+       
+   						friendsFactory.update(rParams._id, $scope.editFriend, function(returnedData){
 							$location.url('/')
 
 						})
